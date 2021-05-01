@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Laptop Store</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="Input.css">
+</head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+			<a href="/" class="brand-link">
+			  <img src="LaptopStoreLogo.jpg"
+				   alt="LaptopStoreLogo"
+				   class="brand-image img-circle elevation-3">
+			  <span class="brand-text font-weight-light">Laptop Store</span>
+			</a>
+			<!-- Sidebar -->
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item">
+						<a href="/create" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p>Add Product</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/sales" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p class="text">Sales Details</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/updatesale" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p class="text">Update Sales</p>
+						</a>
+					</li>
+	  
+				</ul>
+			</nav>
+			<!-- /.sidebar -->
+		</aside>
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1>Laptop Inventory Management</h1>
+			</section>
+			<div class="addbox">
+				<h5 class="mainheading">Add New Laptop</h5><br>
+				<form class="addform" action="/Add" method="post">
+					<label>ProductId</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="ID" name="id" required/><br><br>
+					<label>Brand</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="brand" name="brand"required /><br><br>
+					<label>Model</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="model" name="model"  required /><br><br>
+					<label>Quantity</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="quantity" name="quantity" required/><br><br>
+					<label>Cost price</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="costprice" name="costprice" required/><br><br>
+					<label>Selling Price</label>&nbsp;&nbsp;&nbsp;
+					<input type="text" placeholder="sellingprice" name="sellingprice" required/><br><br>
+					<input type="submit" value="submit">
+					<a href="/home" class="cancel"><input type="button" value="cancel"></a>
+				</form>	
+				
+			</div>	
+			
+		</div>
+		
+	</div>
+</body>
+</html>

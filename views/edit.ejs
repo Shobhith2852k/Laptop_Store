@@ -1,0 +1,104 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Laptop Store</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="Input.css">
+</head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+			<a href="/" class="brand-link">
+			  <img src="LaptopStoreLogo.jpg"
+				   alt="Laptop Store"
+				   class="brand-image img-circle elevation-3">
+			  <span class="brand-text font-weight-light">Laptop Store</span>
+			</a>
+			<!-- Sidebar -->
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item">
+						<a href="/create" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p>Add Product</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/sales" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p class="text">Sales Details</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="updatesale" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p class="text">Update Sales</p>
+						</a>
+					</li>
+	  
+				</ul>
+			</nav>
+			<!-- /.sidebar -->
+		</aside>
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1>Laptop Inventory Management</h1>
+			</section>
+			<div class="addbox">
+				<h5 class="mainheading">Update Laptop</h5><br>
+                <div class="addform" >
+                   
+                <% for(var i=0;i<data.Laptops.length;i++) { %>
+                    <% var xx=data.Laptops[i].id;
+                       var x =xx.toString()%>
+
+                    <% var y=data.id %>
+                    <% if(x==y) {%>
+
+                        <div class="addform">
+                            <label>Id</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                            <%=data.Laptops[i].id %><br><br>
+                            <label>Brand</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                            <%=data.Laptops[i].brand %><br><br>
+                            <label>Model</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                            <%=data.Laptops[i].model %><br><br>
+                            <label>Cost Price</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                            <%=data.Laptops[i].costprice %><br><br>
+                            <label>Old Quantity</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                            <%=data.Laptops[i].quantity %><br><br>
+                            <form action="editupdate" method="post">
+                                <input type="hidden" name="id" value=<%=data.Laptops[i].id %>>
+                                <label>New Quantity</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                                <input type="text" palceholder="quantity" name="quantity" value=0 ><br><br>
+                                <label>Old Selling Price</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                                <%=data.Laptops[i].sellingprice %><br><br>
+                                <label>New Price</label>&nbsp;&nbsp;&nbsp; <label>:</label> &nbsp;
+                                <input type="text" placeholder="price" name="sellingprice" value=<%=data.Laptops[i].sellingprice%>><br><br>
+                                <input type="submit" value="submit">
+                                <a href="/home" class="cancel"><input type="button" value="cancel"></a>
+                            </form>    
+                        </div>
+                    <% break;}%>
+                <% } %>        
+                </div>
+			</div>	
+			
+		</div>
+		
+	</div>
+</body>
+</html>
